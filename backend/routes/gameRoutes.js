@@ -1,0 +1,1 @@
+const r=require('express').Router();const c=require('../controllers/gameController');r.get('/',c.getGames);r.get('/:id',c.getGame);r.post('/',c.createGame);module.exports=r;

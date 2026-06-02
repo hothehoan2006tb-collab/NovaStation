@@ -1,0 +1,1 @@
+exports.getGames=(req,res)=>res.json([{id:1,title:'Marvels Spider-Man 2',price:1290000}]); exports.getGame=(req,res)=>res.json({id:req.params.id,title:'Game detail'}); exports.createGame=(req,res)=>res.status(201).json({message:'Game created'});

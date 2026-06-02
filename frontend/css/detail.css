@@ -1,0 +1,65 @@
+/* detail.css - tuỳ chỉnh riêng trang detail; style chính nằm trong style.css */
+
+/* Đổi giá tiền thành màu trắng thông dụng */
+.detail-wrap .price {
+    color: #ffffff !important;
+}
+
+/* Đồng bộ chiều cao 2 nút Mua Ngay và Thêm vào giỏ */
+.detail-wrap .btn {
+    height: 48px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Bo góc 5px cho các khung thông tin (Nền tảng, Thể loại...) */
+.detail-wrap .meta div {
+    border-radius: 5px !important;
+}
+
+/* Hiệu ứng chọn sao đánh giá */
+.star-rating-box {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+.star-rating-box input {
+    display: none;
+}
+.star-rating-box label {
+    cursor: pointer;
+    color: var(--muted);
+    transition: 0.2s;
+}
+.star-rating-box label:hover,
+.star-rating-box label:hover ~ label,
+.star-rating-box input:checked ~ label {
+    color: var(--gold);
+}
+
+/* Hiệu ứng loading cho nút gửi đánh giá */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.loading-spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 0.8s ease-in-out infinite;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* Thêm hiệu ứng phát sáng nhẹ màu trắng cho ảnh cover/slider */
+.detail-cover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3) !important;
+    transition: box-shadow 0.3s ease;
+}
+.detail-cover:hover {
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.5) !important;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | NovaStation</title>
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- Topbar Admin -->
+    <header class="topbar">
+        <div class="container nav">
+            <a class="brand" href="index.html">
+                <img src="images/logo.png" alt="NovaStation logo">
+            </a>
+            <div class="nav-actions">
+                <span id="adminName" style="margin-right: 15px; color: #ffffff;">Admin</span>
+                <a href="index.html" class="btn btn-ghost">Về trang chủ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Admin Layout -->
+    <main class="admin-layout container" style="margin-top: 30px;">
+        <!-- Sidebar Menu -->
+        <aside class="card sidebar admin-sidebar">
+            <ul class="admin-menu" id="adminMenu">
+                <li><a href="#" class="active" data-target="section-games"> Quản lý Game</a></li>
+                <li><a href="#" data-target="section-orders"> Quản lý Đơn hàng</a></li>
+                <li><a href="#" data-target="section-users"> Quản lý Người dùng</a></li>
+                <li><a href="#" data-target="section-stats"> Thống kê doanh thu</a></li>
+            </ul>
+        </aside>
+
+        <!-- Content Area -->
+        <section class="admin-content">
+            <!-- QUẢN LÝ GAME -->
+            <div class="card summary-box admin-section active" id="section-games">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 style="color: #ffffff;">Danh sách Trò chơi</h2>
+                    <button class="btn" id="addGameBtn">+ Thêm Game Mới</button>
+                </div>
+
+                <!-- Bảng hiển thị dữ liệu -->
+                <div style="overflow-x: auto;">
+                    <table class="orders-table admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Hình ảnh</th>
+                                <th>Tên Game</th>
+                                <th>Thể loại</th>
+                                <th>Giá bán</th>
+                                <th>Tồn kho</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminGamesBody">
+                            <!-- Dữ liệu game sẽ được render bằng JS vào đây -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- QUẢN LÝ ĐƠN HÀNG -->
+            <div class="card summary-box admin-section" id="section-orders" style="display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2>Quản lý Đơn hàng</h2>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="orders-table admin-table">
+                        <thead>
+                            <tr>
+                                <th>Mã Đơn</th>
+                                <th>Khách Hàng</th>
+                                <th>Ngày Đặt</th>
+                                <th>Tổng Tiền</th>
+                                <th>Trạng Thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminOrdersBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- QUẢN LÝ NGƯỜI DÙNG -->
+            <div class="card summary-box admin-section" id="section-users" style="display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2>Quản lý Người dùng</h2>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="orders-table admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên</th>
+                                <th>Email</th>
+                                <th>Quyền</th>
+                                <th>Trạng Thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminUsersBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- THỐNG KÊ DOANH THU -->
+            <div class="card summary-box admin-section" id="section-stats" style="display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2>Thống kê doanh thu</h2>
+                </div>
+                <div class="form-grid" style="margin-bottom: 20px;">
+                    <div style="background: var(--panel2); padding: 20px; border-radius: 5px; text-align: center; border: 1px solid var(--line);">
+                        <h3 style="color: var(--muted); margin-bottom: 10px;">Tổng Doanh Thu</h3>
+                        <h2 style="color: #ffffff; font-size: 28px;" id="statTotalRev">0đ</h2>
+                    </div>
+                    <div style="background: var(--panel2); padding: 20px; border-radius: 5px; text-align: center; border: 1px solid var(--line);">
+                        <h3 style="color: var(--muted); margin-bottom: 10px;">Tổng Đơn Hàng</h3>
+                        <h2 style="color: #ffffff; font-size: 28px;" id="statTotalOrders">0</h2>
+                    </div>
+                    <div style="background: var(--panel2); padding: 20px; border-radius: 5px; text-align: center; border: 1px solid var(--line);">
+                        <h3 style="color: var(--muted); margin-bottom: 10px;">Game Đã Bán</h3>
+                        <h2 style="color: #ffffff; font-size: 28px;" id="statTotalGames">0</h2>
+                    </div>
+                    <div style="background: var(--panel2); padding: 20px; border-radius: 5px; text-align: center; border: 1px solid var(--line);">
+                        <h3 style="color: var(--muted); margin-bottom: 10px;">Khách Hàng</h3>
+                        <h2 style="color: #ffffff; font-size: 28px;" id="statTotalUsers">0</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Thêm/Sửa Game -->
+    <div id="gameModal" class="modal-overlay">
+        <div class="modal card">
+            <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 id="modalTitle">Thêm Game Mới</h3>
+                <button id="closeModalBtn" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer;">&times;</button>
+            </div>
+            <form id="gameForm">
+                <div class="form-grid">
+                    <div><label>Tên Game</label><input class="input" id="gameTitle" required></div>
+                    <div>
+                        <label>Danh mục</label>
+                        <input list="categoryList" class="input" id="gameCategory" required placeholder="Chọn hoặc nhập tên mới...">
+                        <datalist id="categoryList">
+                            <option value="Hành động">
+                            <option value="Phiêu lưu">
+                            <option value="RPG">
+                            <option value="Thể thao">
+                            <option value="Đua xe">
+                        </datalist>
+                    </div>
+                    <div><label>Giá bán (VNĐ)</label><input type="number" class="input" id="gamePrice" required></div>
+                    <div><label>Giá thực (VNĐ)</label><input type="number" class="input" id="gameOldPrice" placeholder="Bỏ trống nếu không giảm"></div>
+                    <div><label>Tồn kho</label><input type="number" class="input" id="gameStock" min="0" value="10" required></div>
+                    <div><label>Nền tảng</label><input class="input" id="gamePlatform" value="PS5" required></div>
+                    <div><label>Ngôn ngữ</label><input class="input" id="gameLanguage" placeholder="Tiếng Anh, Tiếng Việt..."></div>
+                    <div style="grid-column: 1 / -1;"><label>Hình ảnh (URL)</label><input class="input" id="gameImage" placeholder="images/games/..." required></div>
+                    <div style="grid-column: 1 / -1;"><label>Bộ sưu tập ảnh phụ (Cách nhau bằng dấu phẩy)</label><input class="input" id="gameGallery" placeholder="images/games/1.jpg, images/games/2.jpg"></div>
+                </div>
+                <div style="margin-top: 15px;"><label>Mô tả ngắn</label><textarea class="input" id="gameDesc" rows="3" required></textarea></div>
+                <div style="margin-top: 20px; text-align: right;">
+                    <button type="button" class="btn btn-ghost" id="cancelModalBtn" style="margin-right: 10px;">Hủy</button>
+                    <button type="submit" class="btn">Lưu Game</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-box"></div>
+
+    <script src="data/games.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

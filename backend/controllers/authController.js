@@ -1,0 +1,1 @@
+exports.register=(req,res)=>res.status(201).json({message:'Registered'}); exports.login=(req,res)=>res.json({token:'demo-token',user:{email:req.body.email}});

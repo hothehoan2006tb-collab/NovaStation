@@ -1,0 +1,77 @@
+.admin-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 50px;
+}
+
+.admin-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-menu li a {
+    display: block;
+    padding: 12px 16px;
+    color: var(--muted);
+    border-radius: 5px;
+    transition: 0.2s;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.admin-menu li a:hover, .admin-menu li a.active {
+    background: rgba(11, 132, 255, 0.15);
+    color: var(--blue);
+}
+
+.admin-table img {
+    width: 50px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.action-btn { background: transparent; border: 1px solid var(--line); color: var(--text); padding: 5px 10px; border-radius: 5px; cursor: pointer; }
+.action-btn:hover { border-color: var(--blue); color: var(--blue); }
+
+/* Ép toàn bộ chữ và số trong tất cả các bảng quản lý về màu trắng */
+.admin-table th, 
+.admin-table td {
+    color: #ffffff;
+}
+
+/* Bo viền 5px cho tất cả các khung lớn bé trong trang quản trị */
+.admin-layout .card,
+.modal.card,
+.admin-layout .input,
+.admin-layout select,
+.admin-layout textarea,
+.modal .input,
+.modal select,
+.modal textarea {
+    border-radius: 5px !important;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(5px);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s;
+}
+.modal-overlay.active { opacity: 1; pointer-events: auto; }
+.modal {
+    width: 100%; max-width: 600px; padding: 24px;
+    transform: translateY(-20px); transition: 0.3s;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    color: #ffffff;
+}
+.modal-overlay.active .modal { transform: translateY(0); }
+
+/* Đổi màu các nhãn văn bản trong form nhập liệu thành màu trắng */
+.modal label { color: #ffffff; }

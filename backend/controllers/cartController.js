@@ -1,0 +1,1 @@
+exports.getCart=(req,res)=>res.json([]); exports.addToCart=(req,res)=>res.json({message:'Added to cart'}); exports.removeFromCart=(req,res)=>res.json({message:'Removed'});

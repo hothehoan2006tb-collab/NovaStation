@@ -1,0 +1,8 @@
+window.NS_GAMES=[
+{id:1,title:"Marvel's Spider-Man 2",slug:'spiderman2',price:1290000,oldPrice:1490000,category:'Hành động',platform:'PS5',image:'images/games/spidermen.jpg',rating:5,desc:'Phiêu lưu hành động thế giới mở độc quyền PS5. Ảnh poster có thể thay trong thư mục images/games.'},
+{id:2,title:'God of War Ragnarök',slug:'gow-ragnarok',price:1190000,oldPrice:1390000,category:'Phiêu lưu',platform:'PS5',image:'images/games/god1.webp',rating:5,desc:'Hành trình Bắc Âu cùng Kratos và Atreus, đồ họa đẹp và gameplay mạnh mẽ.'},
+{id:3,title:'EA Sports FC 25',slug:'fifa25',price:1090000,oldPrice:1290000,category:'Thể thao',platform:'PS5',image:'images/games/ea1.jpg',rating:4,desc:'Game bóng đá thế hệ mới cho PS5, phù hợp chơi online và local.'},
+{id:4,title:'Elden Ring',slug:'elden-ring',price:990000,oldPrice:1190000,category:'RPG',platform:'PS5',image:'images/games/elden1.webp',rating:5,desc:'RPG thế giới mở đầy thử thách, dành cho người thích khám phá và boss fight.'},
+{id:5,title:'Grand Theft Auto VI',slug:'gta6',price:1590000,oldPrice:1790000,category:'Đua xe',platform:'PS5',image:'images/games/gta2.webp',rating:5,desc:'Placeholder sản phẩm GTA VI. Bạn có thể thay ảnh và thông tin sau.'},
+{id:6,title:'Horizon Forbidden West',slug:'horizon',price:890000,oldPrice:1090000,category:'Phiêu lưu',platform:'PS5',image:'images/games/hori1.jpg',rating:4,desc:'Khám phá thế giới hậu tận thế với robot khổng lồ và đồ họa PS5.'}
+];

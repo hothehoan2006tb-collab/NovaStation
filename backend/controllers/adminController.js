@@ -1,0 +1,1 @@
+exports.dashboard=(req,res)=>res.json({sales:0,orders:0,users:0});

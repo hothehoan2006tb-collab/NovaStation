@@ -1,0 +1,1 @@
+const r=require('express').Router();const c=require('../controllers/orderController');r.get('/',c.getOrders);r.post('/',c.createOrder);module.exports=r;

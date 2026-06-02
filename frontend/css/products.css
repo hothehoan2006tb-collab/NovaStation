@@ -1,0 +1,7 @@
+/* products.css - tuỳ chỉnh riêng trang products; style chính nằm trong style.css */
+
+/* Thu nhỏ tiêu đề DANH SÁCH GAME cho phù hợp và tinh tế hơn */
+.page-title h1 {
+    font-size: 26px !important;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,1 @@
+const r=require('express').Router();const c=require('../controllers/adminController');r.get('/dashboard',c.dashboard);module.exports=r;

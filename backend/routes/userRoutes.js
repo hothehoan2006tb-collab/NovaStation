@@ -1,0 +1,1 @@
+const r=require('express').Router();const c=require('../controllers/userController');r.get('/profile',c.getProfile);r.put('/profile',c.updateProfile);module.exports=r;

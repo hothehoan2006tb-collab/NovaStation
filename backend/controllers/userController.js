@@ -1,0 +1,1 @@
+exports.getProfile=(req,res)=>res.json({name:'Demo User'}); exports.updateProfile=(req,res)=>res.json({message:'Profile updated'});

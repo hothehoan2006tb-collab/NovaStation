@@ -1,0 +1,1 @@
+exports.getOrders=(req,res)=>res.json([]); exports.createOrder=(req,res)=>res.status(201).json({message:'Order created'});

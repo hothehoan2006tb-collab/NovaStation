@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng nhập | PS5STORE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="showcase" aria-label="PS5 Wuxia showcase">
+      <div class="showcase-shade"></div>
+      <div class="showcase-copy">
+        <span class="badge">PS5 EXCLUSIVE</span>
+        <h1>Where<br />Winds Meet</h1>
+        <p>Khám phá thế giới wuxia huyền bí — nơi kiếm thuật, mưa gió và những chuyến phiêu lưu PS5 giao thoa.</p>
+        <div class="tags">
+          <span>Open World</span>
+          <span>Action RPG</span>
+          <span>Wuxia</span>
+          <span>PS5</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-panel" aria-label="Khu vực đăng nhập và đăng ký">
+      <a href="index.html" class="brand" aria-label="Về trang chủ NovaStation">
+        <img src="images/logo2.png" alt="NovaStation logo" class="auth-logo" />
+      </a>
+      <div class="auth-card">
+
+        <div class="heading">
+          <h2 id="formTitle">Chào mừng trở lại</h2>
+          <p id="formSubtitle">Đăng nhập để tiếp tục hành trình khám phá của bạn</p> 
+        </div>
+
+        <div class="tabs" role="tablist">
+          <button id="loginTab" class="tab active" type="button">Đăng Nhập</button>
+          <button id="registerTab" class="tab" type="button">Đăng Ký</button>
+        </div>
+
+        <div id="message" class="message" role="alert"></div>
+
+        <form id="loginForm" class="form active" autocomplete="on" data-auth>
+          <label>
+            <span>Tên đăng nhập hoặc Email</span>
+            <input id="loginIdentity" name="email" type="text" placeholder="Nhập tên đăng nhập hoặc email..." required />
+          </label>
+
+          <label>
+            <span>Mật khẩu</span>
+            <div class="password-wrap">
+              <input id="loginPassword" type="password" placeholder="Nhập mật khẩu..." required />
+              <button class="toggle-password" type="button" data-target="loginPassword">👁</button>
+            </div>
+          </label>
+
+          <button class="submit-btn" type="submit">Đăng Nhập <span>→</span></button>
+        </form>
+
+        <form id="registerForm" class="form" autocomplete="on" data-auth>
+          <label>
+            <span>Họ và tên</span>
+            <input id="registerFullName" name="fullName" type="text" placeholder="Nhập họ tên khách hàng..." required />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input id="registerEmail" name="email" type="email" placeholder="Nhập email..." required />
+          </label>
+
+          <label>
+            <span>Tên đăng nhập</span>
+            <input id="registerUsername" name="name" type="text" placeholder="Tạo tên đăng nhập..." minlength="4" required />
+          </label>
+
+          <label>
+            <span>Mật khẩu</span>
+            <div class="password-wrap">
+              <input id="registerPassword" type="password" placeholder="Tạo mật khẩu tối thiểu 6 ký tự..." minlength="6" required />
+              <button class="toggle-password" type="button" data-target="registerPassword">👁</button>
+            </div>
+          </label>
+
+          <button class="submit-btn" type="submit">Tạo Tài Khoản <span>→</span></button>
+        </form>
+
+        <div class="divider"><span>hoặc</span></div>
+        <button class="psn-btn" type="button"><img src="images/ps-logo.png" alt="PlayStation logo" /> Login with PlayStation Network</button>
+        <p class="terms">Bằng cách đăng nhập, bạn đồng ý với <a href="#">Điều khoản dịch vụ</a> của chúng tôi.</p>
+      </div>
+    </section>
+  </main>
+  <script src="data/games.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
